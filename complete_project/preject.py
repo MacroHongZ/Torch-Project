@@ -84,5 +84,5 @@ class Project():
             fp.write("from .demo_data import DemoDataset")
 
 
-project = Project(project_name="Demo_test")
+project = Project(project_name="Demo_Pro")
 project.creat_directory()
