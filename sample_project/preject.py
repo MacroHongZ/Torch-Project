@@ -4,6 +4,41 @@ import json
 
 
 class Project():
+    ascii_art = """
+                            ,-. 
+                           /$$| 
+                          ,;$'`: 
+                         / $'  `, 
+                         | `     \, 
+                         |,m.    ,\_ 
+                         |Y"F ,-,$$ `. 
+                         |`-'/-'$$,::.\ 
+                          \    ;$';::: ) 
+                         ,:\   $':::;,'_ 
+    _,---------.__   ,.. ::'\ `';::',-' \ 
+   ($$$"'   (88") `-.;:::;, )  `',-dP  : `, 
+    `--.      ,--,     `-.|"-.,     --. : \, 
+        \_    `-',$$$:.   \ -'\`-._  `'  : \__ 
+          `.`$$$$"',.:::/  `.-'\   `--._      `---._________,'`._,' 
+            ) .:::::::'/,   \`. \       `--------------------``' 
+            `-.`:::'_,'P  / `  \_| 
+               `---'/:   (;  : 
+                    `. : :   |           Congratulation !!!
+                      `-.  ..|               Welcome to Torch_Project.
+                         `.  | 
+                           ):     
+                           || 
+                           || 
+                           || 
+                           || 
+                           |' 
+                           /' 
+                          /| 
+                         ( / 
+                          ) 
+                         | 
+    """
+
     def __init__(self, project_name="MyProject", path=os.getcwd()):
         if not os.path.exists(path):
             raise IOError("The path not exists")
@@ -20,10 +55,12 @@ class Project():
             main_path = os.path.join(self.path, directory)
             os.mkdir(main_path)
 
-        self.creat_code_dir()
-        self.creat_data_dir()
+        self._creat_code_dir()
+        self._creat_data_dir()
 
-    def creat_code_dir(self):
+        print(self.ascii_art)
+
+    def _creat_code_dir(self):
         current_directory = os.path.join(self.path, self.directories[0])
         path1 = os.path.join(current_directory, "version1")
         path2 = os.path.join(current_directory, "version2")
@@ -31,8 +68,9 @@ class Project():
         os.mkdir(path2)
 
         self.add_code(path1)
+        self.add_code(path2)
 
-    def creat_data_dir(self):
+    def _creat_data_dir(self):
         current_directory = os.path.join(self.path, self.directories[1])
         path1 = os.path.join(current_directory, "dataset1")
         path2 = os.path.join(current_directory, "dataset2")
@@ -77,5 +115,5 @@ class Project():
             fp.write(code_content["data"])
 
 
-project = Project(project_name="Demo_Pro")
+project = Project(project_name="Demo1")
 project.creat_directory()
