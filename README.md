@@ -1,13 +1,30 @@
-# Torch-Project
+# 1. Torch-Project
 A Python module for quickly creating a pytorch project from scratch.
 
-# Introduction
+## Key feature
+1. Support for multiple models and datasets
+2. Local version management
+3. High level of reproducibility
+4. Visualized training monitoring
+
+# 2. Requirements
+- pytorch
+- numpy
+- pandas
+- sklearn
+- tqdm
+- deeplog(v1.1.0) [Link](https://github.com/MacroHongZ/DeepLog)
+
+
+# 3. Introduction
 
 This repository contains two project templates：`sample_project` AND `complete_project`. Each of these has a `Project` class in `project.py`.
 
 To create a project:
 ```python
-project = Project(project_name="Demo_Pro", path="path")
+from project import Project
+
+project = Project(project_name="Demo_Project", path="path")
 project.creat_directory()
 ```
 
