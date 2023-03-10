@@ -4,6 +4,40 @@ import json
 
 
 class Project():
+    ascii_art = """
+                            ,-. 
+                           /$$| 
+                          ,;$'`: 
+                         / $'  `, 
+                         | `     \, 
+                         |,m.    ,\_ 
+                         |Y"F ,-,$$ `. 
+                         |`-'/-'$$,::.\ 
+                          \    ;$';::: ) 
+                         ,:\   $':::;,'_ 
+    _,---------.__   ,.. ::'\ `';::',-' \ 
+   ($$$"'   (88") `-.;:::;, )  `',-dP  : `, 
+    `--.      ,--,     `-.|"-.,     --. : \, 
+        \_    `-',$$$:.   \ -'\`-._  `'  : \__ 
+          `.`$$$$"',.:::/  `.-'\   `--._      `---._________,'`._,' 
+            ) .:::::::'/,   \`. \       `--------------------``' 
+            `-.`:::'_,'P  / `  \_| 
+               `---'/:   (;  : 
+                    `. : :   |           Congratulation !!!
+                      `-.  ..|               Welcome to Torch_Project.
+                         `.  | 
+                           ):     
+                           || 
+                           || 
+                           || 
+                           || 
+                           |' 
+                           /' 
+                          /| 
+                         ( / 
+                          ) 
+                         | 
+    """
     def __init__(self, project_name="MyProject", path=os.getcwd()):
         if not os.path.exists(path):
             raise IOError("The path not exists")
@@ -23,6 +57,8 @@ class Project():
         self._creat_code_dir()
         self._creat_data_dir()
 
+        print(self.ascii_art)
+
     def _creat_code_dir(self):
         current_directory = os.path.join(self.path, self.directories[0])
         path1 = os.path.join(current_directory, "version1")
@@ -31,6 +67,7 @@ class Project():
         os.mkdir(path2)
 
         self.add_code(path1)
+        self.add_code(path2)
 
     def _creat_data_dir(self):
         current_directory = os.path.join(self.path, self.directories[1])
@@ -81,8 +118,8 @@ class Project():
             fp.write(code_content["data"])
         path1 = os.path.join(path, "data/__init__.py")
         with open(path1, "w") as fp:
-            fp.write("from .demo_data import DemoDataset")
+            fp.write("from .demo_data import load_dataset")
 
 
-project = Project(project_name="Demo_Pro")
+project = Project(project_name="Demo1")
 project.creat_directory()
