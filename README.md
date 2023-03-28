@@ -13,7 +13,7 @@ A Python module for quickly creating a pytorch project from scratch.
 - pandas
 - sklearn
 - tqdm
-- deeplog(v1.1.0) [Link](https://github.com/MacroHongZ/DeepLog)
+- deeplog(v1.1.2) [Link](https://github.com/MacroHongZ/DeepLog)
 
 
 # 3. Introduction
