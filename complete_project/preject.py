@@ -122,4 +122,5 @@ class Project():
 
 
 project = Project(project_name="Demo1")
-project.creat_directory()
+# project.creat_directory()
+project.add_code("D:/科研/AbAgInPr/code/new_code")
