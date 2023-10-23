@@ -49,18 +49,18 @@ class Project():
         self.path = directory
         self.directories = ["code", "data", "report"]
 
-    def creat_directory(self):
+    def create_directory(self):
         os.mkdir(self.path)
         for directory in self.directories:
             main_path = os.path.join(self.path, directory)
             os.mkdir(main_path)
 
-        self._creat_code_dir()
-        self._creat_data_dir()
+        self._create_code_dir()
+        self._create_data_dir()
 
         print(self.ascii_art)
 
-    def _creat_code_dir(self):
+    def _create_code_dir(self):
         current_directory = os.path.join(self.path, self.directories[0])
         path1 = os.path.join(current_directory, "version1")
         path2 = os.path.join(current_directory, "version2")
@@ -70,7 +70,7 @@ class Project():
         self.add_code(path1)
         self.add_code(path2)
 
-    def _creat_data_dir(self):
+    def _create_data_dir(self):
         current_directory = os.path.join(self.path, self.directories[1])
         path1 = os.path.join(current_directory, "dataset1")
         path2 = os.path.join(current_directory, "dataset2")
@@ -84,9 +84,6 @@ class Project():
 
         os.mkdir(os.path.join(path, "output_files"))
         os.mkdir(os.path.join(path, "output_files", "check_point"))
-
-        os.mkdir(os.path.join(path, "model"))
-        os.mkdir(os.path.join(path, "data"))
 
         with open('code.json', "r") as fp:
             code_content = json.load(fp)
@@ -102,18 +99,16 @@ class Project():
 
         path1 = os.path.join(path, "utils.py")
         with open(path1, "w") as fp:
-            fp.write("# other code")
-            fp.write("\n")
             fp.write(code_content["utils"])
 
-        path1 = os.path.join(path, "model\\model.py")
+        path1 = os.path.join(path, "model.py")
         with open(path1, "w") as fp:
             fp.write(code_content["model"])
 
-        path1 = os.path.join(path, "data\\data.py")
+        path1 = os.path.join(path, "data.py")
         with open(path1, "w") as fp:
             fp.write(code_content["data"])
 
 
 project = Project(project_name="Demo1")
-project.creat_directory()
+project.create_directory()

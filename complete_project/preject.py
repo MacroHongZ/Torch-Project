@@ -3,7 +3,7 @@ import time
 import json
 
 
-class Project():
+class Project:
     ascii_art = """
                             ,-. 
                            /$$| 
@@ -38,6 +38,7 @@ class Project():
                           ) 
                          | 
     """
+
     def __init__(self, project_name="MyProject", path=os.getcwd()):
         if not os.path.exists(path):
             raise IOError("The path not exists")
@@ -48,18 +49,18 @@ class Project():
         self.path = directory
         self.directories = ["code", "data", "report"]
 
-    def creat_directory(self):
+    def create_directory(self):
         os.mkdir(self.path)
         for directory in self.directories:
             main_path = os.path.join(self.path, directory)
             os.mkdir(main_path)
 
-        self._creat_code_dir()
-        self._creat_data_dir()
+        self._create_code_dir()
+        self._create_data_dir()
 
         print(self.ascii_art)
 
-    def _creat_code_dir(self):
+    def _create_code_dir(self):
         current_directory = os.path.join(self.path, self.directories[0])
         path1 = os.path.join(current_directory, "version1")
         path2 = os.path.join(current_directory, "version2")
@@ -69,7 +70,7 @@ class Project():
         self.add_code(path1)
         self.add_code(path2)
 
-    def _creat_data_dir(self):
+    def _create_data_dir(self):
         current_directory = os.path.join(self.path, self.directories[1])
         path1 = os.path.join(current_directory, "dataset1")
         path2 = os.path.join(current_directory, "dataset2")
@@ -106,21 +107,30 @@ class Project():
         path1 = os.path.join(path, "model/mlp.py")
         with open(path1, "w") as fp:
             fp.write(code_content["model"])
-        path1 = os.path.join(path, "model/mlp_train.py")
+        path1 = os.path.join(path, "model/mlp_trainer.py")
         with open(path1, "w") as fp:
             fp.write(code_content["modelTra"])
+        path1 = os.path.join(path, "model/trainer_template.py")
+        with open(path1, "w") as fp:
+            fp.write(code_content["baesTra"])
+        path1 = os.path.join(path, "model/metric.py")
+        with open(path1, "w") as fp:
+            fp.write(code_content["metric"])
         path1 = os.path.join(path, "model/__init__.py")
         with open(path1, "w") as fp:
-            fp.write("from .mlp_train import MlpTrainer")
+            fp.write("from .mlp_trainer import MlpTrainer\n")
+            fp.write("from .mlp import MLP")
 
         path1 = os.path.join(path, "data/demo_data.py")
         with open(path1, "w") as fp:
             fp.write(code_content["data"])
+        path1 = os.path.join(path, "data/utils.py")
+        with open(path1, "w") as fp:
+            fp.write(code_content["utils"])
         path1 = os.path.join(path, "data/__init__.py")
         with open(path1, "w") as fp:
             fp.write("from .demo_data import load_dataset")
 
 
-project = Project(project_name="Demo1")
-# project.creat_directory()
-project.add_code("D:/科研/AbAgInPr/code/new_code")
+project = Project(project_name="Antibody Properties Prediction")
+project.add_code("D:/科研/Antibody Properties Prediction/code/code_templete")
