@@ -13,7 +13,7 @@ A Python module for quickly creating a pytorch project from scratch.
 - pandas
 - sklearn
 - tqdm
-- deeplog(v1.1.2) [Link](https://github.com/MacroHongZ/DeepLog)
+- deeplog(v1.1.9) [Link](https://github.com/MacroHongZ/DeepLog)
 
 
 # 3. Introduction
@@ -54,6 +54,7 @@ The directory structure of the two project templates is as follows.
 
 `complete_project`
 ```
+D:.
 ├─code
 │  ├─version1
 │  │  │  main.py
@@ -61,11 +62,14 @@ The directory structure of the two project templates is as follows.
 │  │  │
 │  │  ├─data
 │  │  │      demo_data.py
+│  │  │      utils.py
 │  │  │      __init__.py
 │  │  │
 │  │  ├─model
+│  │  │      metric.py
 │  │  │      mlp.py
-│  │  │      mlp_train.py
+│  │  │      mlp_trainer.py
+│  │  │      trainer_template.py
 │  │  │      __init__.py
 │  │  │
 │  │  └─output_files
