@@ -36,13 +36,8 @@ The directory structure of the two project templates is as follows.
 │  ├─version1
 │  │  │  main.py
 │  │  │  utils.py
-│  │  │
-│  │  ├─data
-│  │  │      data.py
-│  │  │
-│  │  ├─model
-│  │  │      model.py
-│  │  │
+│  │  |  data.py
+│  │  |  model.py
 │  │  └─output_files
 │  │      └─check_point
 │  └─version2
