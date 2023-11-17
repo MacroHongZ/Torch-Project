@@ -3,7 +3,7 @@ import time
 import json
 
 
-class Project():
+class Project:
     ascii_art = """
                             ,-. 
                            /$$| 
@@ -85,15 +85,15 @@ class Project():
         os.mkdir(os.path.join(path, "output_files"))
         os.mkdir(os.path.join(path, "output_files", "check_point"))
 
-        with open('code.json', "r") as fp:
+        with open("code.json", "r") as fp:
             code_content = json.load(fp)
 
         date = time.strftime("%Y-%m-%d %H:%M", time.localtime(time.time()))
         path1 = os.path.join(path, "main.py")
         with open(path1, "w") as fp:
-            fp.write('# create time: {}'.format(date))
+            fp.write("# create time: {}".format(date))
             fp.write("\n")
-            fp.write('# author:  WangHZ')
+            fp.write("# author:  WangHZ")
             fp.write("\n")
             fp.write(code_content["main"])
 
@@ -110,5 +110,5 @@ class Project():
             fp.write(code_content["data"])
 
 
-project = Project(project_name="Demo1")
+project = Project(project_name="Demo")
 project.create_directory()

@@ -132,5 +132,5 @@ class Project:
             fp.write("from .demo_data import load_dataset")
 
 
-project = Project(project_name="Antibody Properties Prediction")
-project.add_code("D:/科研/Antibody Properties Prediction/code/code_templete")
+project = Project(project_name="Demo")
+project.create_directory()
